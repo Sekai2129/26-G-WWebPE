@@ -1,0 +1,78 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Switzer, system-ui, sans-serif;
+  background: #f0f2f5;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  width: 820px;
+  max-width: 94vw;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.panel-left {
+  padding: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-right {
+  padding: 32px;
+  background: #43995c;
+  color: #fff;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+h2 { margin: 0; }
+.subtitle { margin: 4px 0 0; color: #666; }
+
+.panel-title {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+dl { margin: 0; text-align: left; }
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+dt { color: rgba(255, 255, 255, 0.8); }
+dd { margin: 0; font-weight: 600; text-align: right; }
+
+/* Loading / error message spans both columns */
+.status {
+  grid-column: 1 / -1;
+  padding: 28px;
+  text-align: center;
+  color: #666;
+}
+.error { color: #c0392b; }
+
+/* stack the panels on small screens */
+@media (max-width: 700px) {
+  .card { grid-template-columns: 1fr; }
+}
